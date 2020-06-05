@@ -1,0 +1,28 @@
+<app-loading *ngIf= "isLoading" ></app-loading>
+<h1 mat-dialog-title>
+    {{formTitle}}
+</h1>
+<form [formGroup]="editorForm" #formDirective="ngForm">
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label for="title">Song Title</mat-label>
+        <input id="title" formControlName="title" matInput placeholder="e.g. Imagine" >
+        <mat-icon matSuffix>music_note</mat-icon>
+        <mat-error *ngIf="editorForm?.controls?.title?.hasError('required')">Please add song title</mat-error>
+        <mat-error *ngIf="editorForm?.controls?.title?.hasError('pattern')">Special charater not allowed</mat-error>
+    </mat-form-field>
+</div>
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label for="artist">Artist</mat-label>
+        <input id="artist" formControlName="artist" matInput placeholder="e.g. John Lennon" >
+        <mat-icon matSuffix>music_note</mat-icon>
+        <mat-error *ngIf="editorForm?.controls?.artist?.hasError('required')">Plaese add artist</mat-error>
+        <mat-error *ngIf="editorForm?.controls?.artist?.hasError('pattern')">Special charater not allowed</mat-error>
+    </mat-form-field>
+</div>
+<mat-dialog-actions align="end">
+<button mat-button mat-dialog-close>{{cancelButtonText}}</button>
+<button mat-button color="primary" (click)= "onConfirmClick()">{{confirmButtonText}}</button>
+</mat-dialog-actions>
+</form>

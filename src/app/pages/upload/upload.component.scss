@@ -1,0 +1,31 @@
+.container {
+    text-align: center;
+    margin-top: 3vh !important;
+    margin: auto;
+    width: 80%;
+    border: 1px solid #eeeeee;
+    box-shadow: 10px 10px 5px #939393;
+    padding: 10px;
+    display: block;
+  }
+
+  .file_upload{
+    width: 210px; 
+    padding: 15px 10px; 
+    border: 1px solid rgba(0, 0, 0, 0.12); 
+    border-radius: 4px; 
+    background: white; 
+    margin-bottom: 0;
+  }
+
+  .file_error{
+    text-align:inherit; 
+    margin:0; 
+    font-size: 75%; 
+    color: #f44336;
+  }
+
+  .upload_btn{
+    width: 40%;
+    max-width: 210px;
+  }

@@ -1,0 +1,15 @@
+.loading-Component{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background-color: #a5a5a599; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 100000
+}
+.loading-Message{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}

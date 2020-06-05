@@ -1,0 +1,15 @@
+.mat-toolbar{
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.top-sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px; 
+    z-index: 10;
+  }
+
+.mat-icon{
+    cursor: pointer;
+}

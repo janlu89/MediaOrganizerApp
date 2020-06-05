@@ -1,0 +1,35 @@
+<app-loading *ngIf= "isLoading" ></app-loading>
+<div class="container">
+    <h1> Upload New Music File</h1>
+    <form [formGroup]="musicForm" #formDirective="ngForm">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label for="title">Song Title</mat-label>
+                <input id="title" formControlName="title" matInput placeholder="e.g. Imagine" [formControl]= "title">
+                <mat-icon matSuffix>music_note</mat-icon>
+                <mat-error *ngIf="title.hasError('required')">Please add song title</mat-error>
+                <mat-error *ngIf="title.hasError('pattern')">Special charater not allowed</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label for="artist">Artist</mat-label>
+                <input id="artist" formControlName="artist" matInput placeholder="e.g. John Lennon" [formControl]="artist">
+                <mat-icon matSuffix>music_note</mat-icon>
+                <mat-error *ngIf="artist.hasError('required')">Plaese add artist</mat-error>
+                <mat-error *ngIf="artist.hasError('pattern')">Special charater not allowed</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row" style="margin-bottom: 1.5em;">
+
+                <input id="musicFile" formControlName="musicFile" type="file" class="file_upload" (change)="uploadFile($event)" [formControl]="musicFile" [style.border-color]= "musicFile.hasError('required') && (musicFile.dirty || musicFile.touched) ? '#f44336' : null">
+                <p *ngIf="musicFile.hasError('required')  && (musicFile.dirty || musicFile.touched)" class="file_error">Please choose a music file to upoload</p>
+
+        </div>
+        <div class="row">
+            <button class="upload_btn" type="submit" (click)="uploadMusic(formDirective)" mat-raised-button color="primary">Upload
+                <mat-icon matSuffix>cloud_upload</mat-icon>
+            </button>
+        </div>
+    </form>
+</div>

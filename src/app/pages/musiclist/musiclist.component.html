@@ -1,0 +1,18 @@
+<app-loading *ngIf= "isLoading" ></app-loading>
+<div class="playlist"> 
+    <mat-toolbar class="top-sticky">
+        <span class="mat-toolbar ">Edit The Files</span>
+      </mat-toolbar>
+    <mat-list color="primary">
+      
+      <mat-list-item *ngFor="let musicFile of files; let i = index" >
+        <mat-icon color="primary" mat-list-icon>music_note</mat-icon>
+        <h4 mat-line>{{ musicFile?.title }}</h4>
+        <h5 mat-line>by {{ musicFile?.artist }}</h5>
+        <mat-icon color="primary" (click)="edit(musicFile)" class="mat-icon">edit</mat-icon>
+        <mat-icon color="primary" (click)="delete(musicFile)" class="mat-icon">delete</mat-icon>
+        
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+</div>

@@ -1,0 +1,30 @@
+.container {
+    .main-toolbar {
+        padding-right: 2vw;
+      .main-toolbar-row {
+      .spacer {
+        flex: 1 1 auto;
+      }
+      .toolbar-btn {
+        font-size: 16px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      .mat-icon{
+        color: white;
+        font-size: 2em;
+      }
+      .right-icon{
+        margin-left: 25px;
+      }
+    }
+    }
+
+    .top-sticky{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: white; 
+      z-index: 10;
+    }
+}
